@@ -26,13 +26,13 @@ def set_table():
     print('--------------')
 
     # 1 设置财务报表获取时期
-    year = int(float(input('请输入要查询的年份(四位数2007-2018)：\n')))
-    # int表示取整，里面加float是因为输入的是str，直接int会报错，float则不会
+    year = eval(input('请输入要查询的年份(四位数2007-2018)：\n'))
+    # int表示取整，里面加float是因为输入的是str，直接int会报错，float则不会,ps:float也不行，eval可以
     # https://stackoverflow.com/questions/1841565/valueerror-invalid-literal-for-int-with-base-10
     while (year < 2007 or year > 2018):
         year = int(float(input('年份数值输入错误，请重新输入：\n')))
 
-    quarter = int(float(input('请输入小写数字季度(1:1季报，2-年中报，3：3季报，4-年报)：\n')))
+    quarter = eval(input('请输入小写数字季度(1:1季报，2-年中报，3：3季报，4-年报)：\n'))
     while (quarter < 1 or quarter > 4):
         quarter = int(float(input('季度数值输入错误，请重新输入：\n')))
 
